@@ -13,7 +13,7 @@ Install dependencies:
 
 npm install
 
-npm run dev
+npm run dev (runs on port 5173)
 
 # for running tests
 
