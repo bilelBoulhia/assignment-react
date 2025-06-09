@@ -1,54 +1,53 @@
-# React + TypeScript + Vite
+# Project Setup and Approach
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This file covers how to get the project running and the key  choices I made.
 
-Currently, two official plugins are available:
+## Setup
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```
+git clone <your-repository-url>
 
-## Expanding the ESLint configuration
+cd <name>
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Install dependencies:
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+npm install
+
+npm run dev
+
+# for running tests
+
+npm run test
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## UI/UX Approach
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Tech Stack Choices
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+React + Vite: I chose this for a Faster spin-up of the development server and Improved build performance
+
+React Query: It handles server data automatically (fetching, caching), which makes the app feel quicker and more reliable.
+
+Tailwind CSS: I used Tailwind to rapidly build and style reusable components directly in the markup.
+
+Hooks & Context: I used hooks to organize logic within components and context to manage shared state, i used context for the dark/light mode theme.
+
+## UI & UX Improvements
+
+Drawer for Selections: I used a slide-in drawer so user selections are always clear.
+
+Clearer Navigation: The "previous step" button is now more intuitive and easier to find.
+
+Cancel Button: The cancel button's design is more distinct to prevent accidentally going back to previous step.
+
+Cards: The cards are now fully responsive especially for small screens and show more info at a glance.
+
+Theme Options: I added a theme switcher (light/dark) for user preference and better accessibility.
+
+Custom Stepper: I replaced the default browser scrollbar in the stepper with a cleaner, custom design.
+
+## Code Quality
+
+Constants File: I kept text labels in a central file for easy maintenance.
+
+TypeScript: I used TypeScript for type safety
