@@ -1,8 +1,3 @@
-/**
- * Fetches available skips by location.
- * @returns Promise<Skip[]> - List of skips
- * @throws Error if network response is not ok
- */
 import { Skip } from "../types/skip";
 
 export const fetchSkips = async (): Promise<Skip[]> => {

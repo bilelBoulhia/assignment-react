@@ -1,7 +1,7 @@
 import React, { useRef } from "react"
 import Layout from "../Layout"
 import { StepperProps } from "../types/stepper"
-import { ChevronLeft,ArrowLeft,ArrowRight, CircleArrowOutDownRightIcon } from "lucide-react"
+import { ArrowLeft,ArrowRight} from "lucide-react"
 import { UI_TEXT } from "../constants/uiText"
 
 const Stepper: React.FC<StepperProps & { onBack?: () => void }> = ({ steps, currentStep, onBack }) => {
